@@ -1,53 +1,53 @@
 //muda o nome a partir do seletor de classe
-var pacientes = document.querySelector("subtitulo");
-var nome = document.querySelector("titulo");
+var subtitulo = document.querySelector(".subtitulo");
+var nome = document.querySelector(".titulo");
 nome.textContent = "Kaio Nutrição";
-titulo.textContent = "Meus pacientes";
-subtitulo.content = "Meus Pacientes"
+subtitulo.content = "Meus Pacientes";
 
 //acessar a tag tr - paciente Paulo
-var paciente = document.querySelectorAll("#primeiro paciente");
-for(var 1 = 0; 1 < paciente.length; 1++){
-    1 = 
-}
+    var pacientes = document.querySelectorAll(".paciente");
+    for(var i = 0; i < pacientes.length; i++){
+    var paciente = pacientes[i];
+    
+    //seleciona o conteúdo peso da tag
+    var tdpeso = paciente.querySelector(".info-peso");
+    var peso = tdpeso.textContent;
+    console.log(peso);
+
+    //seleciona o conteúdo altura da tag
+    var tdaltura = paciente.querySelector(".info-altura");
+    var altura = tdaltura.textContent;
+    console.log(altura);
+
+    //calcula o imc
+    var imc = peso / (altura * altura);
+    console.log(imc);
+
+    //variaveis com valor true
+    var pesoValido = true;
+    var alturaValido = true;
+
+    //acessa e altera o imc
+    var tdImc = paciente.querySelector(".info-imc");
+    tdImc.textContent = imc;
+   
+
+    //define quando o imc sera calculado
+    if (pesoValido && alturaValida){
+        var tdImc = paciente.querySelector(".info-imc");
+        tdImc.textContent = imc;}
+        
 
 
-//seleciona o conteúdo peso da tag
-var tdpeso = paciente.querySelector(".info-peso");
-var peso = tdpeso.textContent 
+    if(peso <= 0 || peso > 1000){
+       console.log("peso invalido");
+       var pesoValido = false;
+       tdImc.textContent = "Peso Invalido"}
 
-//selecion o conteúdo altura da tag
-var tdaltura = paciente.querySelector("info-altura");
-var altura = tdaltura.textContent;
+    if(altura <= 0 || altura> 3.00){
+       console.log("altura invalida");
+       var alturaValida = false;
+       tdImc.textContent = "Altura Invalida"
+    }
 
-//calcula o imc
-var imc = peso / (altura * altura);
-
-//variaveis com valor true
-var pesovalido = true;
-var alturavalido = true;
-tdImc.textContent = "Altura valida"
-
-
-//acessa e altera o imc
-var tdimc = paciente.querySelector(".info-imc");
-tdimc.textContent = imc;
-
-
-if(peso <0 || peso > 1000){
-    alert("peso invalido")
-
-var pesovalido = false;
-
-}
-if(altura < 0 || altura> 3.00){
-    alert("altura invalida");
-
-var alturavalida = false;
- 
-}
-
-
-
-
-
+    }
