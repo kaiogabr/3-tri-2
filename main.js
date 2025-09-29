@@ -4,6 +4,7 @@ var nome = document.querySelector(".titulo");
 nome.textContent = "Kaio Nutrição";
 subtitulo.content = "Meus Pacientes";
 
+
 //acessar a tag tr - paciente Paulo
     var pacientes = document.querySelectorAll(".paciente");
     for(var i = 0; i < pacientes.length; i++){
@@ -35,19 +36,34 @@ subtitulo.content = "Meus Pacientes";
     //define quando o imc sera calculado
     if (pesoValido && alturaValida){
         var tdImc = paciente.querySelector(".info-imc");
-        tdImc.textContent = imc;}
+        tdImc.textContent = Imc.toFixed(1);
+      }
         
-
 
     if(peso <= 0 || peso > 1000){
        console.log("peso invalido");
        var pesoValido = false;
-       tdImc.textContent = "Peso Invalido"}
+       tdImc.textContent = "Peso Invalido"
+       paciente.classList.add("campo-invalido");
+       paciente.Style.backgroundcolor = "red";
+    }
+
 
     if(altura <= 0 || altura> 3.00){
        console.log("altura invalida");
        var alturaValida = false;
        tdImc.textContent = "Altura Invalida"
+       paciente.Style.backgroundcolor = "red";
+       paciente.classList.add("campo-invalido");
     }
 
+    }
+
+
+
+    //quando clicar no titulo
+    subtitulo.addEventListener('click',mostraMensagem);
+
+    function mostraMensagem(){
+      alert("Este elemento foi clicado");
     }
