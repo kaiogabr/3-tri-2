@@ -67,3 +67,42 @@ subtitulo.content = "Meus Pacientes";
     function mostraMensagem(){
       alert("Este elemento foi clicado");
     }
+
+
+    //acessar o botao
+    var botaoAdicionar = document.querySelector("#adicionar-paciente");
+
+    //o que acontece quando clica
+    botaoAdicionar.addEventListener ('click', function(event){
+      event.preventDefault()
+
+ //acessa o formulario
+ var formulario = document.querySelector("#form-adiciona");
+ console.log(formulario);
+
+ //caça os valores
+ var nome = formulario.nome.value;
+ var peso = formulario.peso.value;
+ var altura = formulario.altura.value;
+ var gordura = formulario.gordura.value;
+
+ //cria tag tr
+ var pacienteTr = document.createElement("tr");
+ var nomeTd = document.createElement("td");
+ var pesoTd = document.createElement("td");
+ var alturaTd = document.createElement("td");
+ var gorduraTd = document.createElement("td");
+ var imcTd = document.createElement("td");
+
+ //adiciona os valores
+ nomeTd.textcontent = nome;
+ pesoTd.textcontent = peso;
+ alturaTd.textcontent = altura;
+ gorduraTd.textcontent = gordura;
+ imcTd.textcontent = imc;
+
+
+    });
+
+   
+
