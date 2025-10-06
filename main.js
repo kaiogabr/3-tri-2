@@ -78,7 +78,6 @@ subtitulo.content = "Meus Pacientes";
 
  //acessa o formulario
  var formulario = document.querySelector("#form-adiciona");
- console.log(formulario);
 
  //caça os valores
  var nome = formulario.nome.value;
@@ -88,6 +87,7 @@ subtitulo.content = "Meus Pacientes";
 
  //cria tag tr
  var pacienteTr = document.createElement("tr");
+
  var nomeTd = document.createElement("td");
  var pesoTd = document.createElement("td");
  var alturaTd = document.createElement("td");
@@ -101,8 +101,18 @@ subtitulo.content = "Meus Pacientes";
  gorduraTd.textcontent = gordura;
  imcTd.textcontent = imc;
 
+ //Adiciona as tags na tela do usuario
+      pacienteTr.appendChild(nomeTd);
+      pacienteTr.appendChild(pesoTd);
+      pacienteTr.appendChild(alturaTd);
+      pacienteTr.appendChild(gorduraTd);
+      pacienteTr.appendChild(imcTd);
+
+      var tabela = document.querySelector("#tabela-pacientes");
+      tabela.appendChild(pacienteTr);
 
     });
 
-   
 
+   
+            
